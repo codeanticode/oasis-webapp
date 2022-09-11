@@ -10,7 +10,7 @@ import { QueryClientProvider, QueryClient } from 'react-query';
 import styled from 'styled-components';
 import ReactGA from 'react-ga';
 import Navbar from './components/Navbar';
-// import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 import { ProvideAuth } from './hooks/useAuth';
 import { FaInstagram, FaDiscord } from 'react-icons/fa';
 
@@ -24,7 +24,7 @@ import ArtworkCover from './pages/ArtworkCover';
 import EventRedirect from './pages/EventRedirect';
 import ArtistRedirect from './pages/ArtistRedirect';
 import Artwork from './pages/Artwork';
-// import ChatRoom from './pages/ChatRoom';
+import ChatRoom from './pages/ChatRoom';
 import Places from './pages/Places';
 import Place from './pages/Place';
 import Hosts from './pages/Hosts';
@@ -105,9 +105,9 @@ function App() {
                       <Route path="/host/:id" exact component={Host} />
                       <Route path="/about" exact component={About} />
                       <Route path="/signup" exact component={Signup} />
-                      {/* <PrivateRoute path="/room/:roomId">
+                      <PrivateRoute path="/room/:roomId">
                         <ChatRoom />
-                      </PrivateRoute> */}
+                      </PrivateRoute>
                       <Route path="/bio/:name" exact component={ArtistRedirect} />
                       <Route path="/:alias" exact component={EventRedirect} />
                     </Switch>
